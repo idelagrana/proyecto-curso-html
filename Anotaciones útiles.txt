@@ -1,0 +1,382 @@
+CURSO HTML
+
+En el Head se almacena la información de la página: leer navegador y los robots de búsqueda.
+
+La parte visible de la web comienza con el body. Se procede al anidamiento. 
+Anidamiento: dentro del body está el <header> y dentro del header el <nav>. Cajitas dentro de cajitas. 
+
+<p></p> es la etiqueta de párrafo 
+
+El párrafo se comporta en bloque (por ejemplo color de fondo). Abarca toda la línea.
+En cambio, la negrita, la cursiva y demás elementos como estos abarca sólo la parte que se le asigna.
+
+<b> es Negrita
+<i> es Cursiva
+
+<strong> y <em> tienen el mismo efecto que negrita y cursiva, pero los motores de búsqueda los captan mejor
+
+Para poder hacer un salto de línea hay que colocar la etiqueta <br>, porque simplemento con dar un enter en el código no funciona.
+Con <hr> también se hace un salto de línea pero con una línea entre medio
+
+<pre>Con pre se pueden hacer
+        saltos de línea
+        presionando enter, sin necesidad
+        de poner br 
+    </pre>
+
+<h1></h1> es el encabezado con mayor importancia (TÍTULO). Luego le siguen h2, h3, h4, h5, h6. 
+
+<blockquote>"Acá se ponen citas. Por ejemplo, de algún pensador griego". Sócrates</blockquote>
+<q>Funciona como blockquote pero lleva incluidas las comillas y no lleva sangría</q>. Va encerrada dentro de un párrafo <p></p>
+-Súper índice: <sup>2</sup> así se grafica cuando queremos elevar al cuadrado. También se puede utilizar par otras cosas.
+-Sub índice: <sub></sub>, por ejemplo, lo utilizamos para poner representaciones de la tabla periódica de elementos: H2O (el 2 aparecería por debajo)
+
+-Abreviaturas: <abbr title="Kilómetros">kms</abbr>. En la página se verá la abreviatura kms, pero si se mantiene el cursor encima saldrá la palabra kilómetros
+-Lo mismo sucede con los acrónimos. Ejemplo: ¿Qué significa OMS? <p>Coloca el mouse arriba para saber: <acronym title="Organización Mundial de la Salud">OMS</acronym></p>
+
+-Etiqueta <a></a>: Es para redirigir a un enlace. Por ejemplo:  <a href="https://www.tycsports.com/boca-juniors/juan-roman-riquelme-boca-entrevista-exclusiva-tyc-sports-en-vivo-id569304.html">Las mejores frases de Riquelme</a>
+-Para que no se vayan de la página se le agrega target="_blank" luego del enlace. Así se abrirá otra pestaña aparte y permanecerá la página de origen abierta.
+
+-Enviar mail a contacto. También con etiqueta <a>: <a href="mailto: ignaciodelagrana@hotmail.com">Enviar mail a contacto</a>
+-Lo mismo para llamar por teléfono: <a href="tel: +1169137401">Llamar</a>
+
+
+IMÁGENES
+
+<img src="images.jpg" alt="Máquina de escribir" width="290px" height="300"> De esta manera se inserta una imágen. Hay que elegir el ancho o el alto para indicar los píxeles, porque los dos al mismo tiempo deforman la imagen.
+Pero por lo general vamos a tener las imágenes dentro de una carpeta, por lo que hay que indicarle en la ruta, de esta manera: <img src="/assets/images.jpg" alt="Máquina de escribir" height="290px">
+También puedo hacer que una imagen lleve a una página web. En lugar de poner el nombre para que la gente cliquee coloco la imagen.
+Ejemplo: <a href="https://www.ole.com.ar"><img src="/assets/images.jpg" alt="Máquina de escribir" width="300px"></a> 
+
+VIDEO
+
+De esta manera inserto un video: <video src="/assets/video/Lionel Messi Goal vs Nashville 🔥 (1).mp4"  autoplay controls muted width="600px"></video>
+autoplay es para que se reproduzca, controls es para controlar el video (pausarlo, adelantarlo, etc) y muted es para quitarle el sonido mientras se reproduce.
+
+Hay otra manera que es colocando la fuente en otra línea
+Ejemplo:  <video controls muted width="500px" poster="/assets/images.jpg">
+        <source src="/assets/video/Lionel Messi Goal vs Nashville 🔥 (1).mp4" type="video/mp4"> 
+En este caso le saqué el autoplay para poner una imagen estática antes de reproducir el video (como en Youtube). Se hace con "poster"
+
+AUDIO
+Para los audios es muy similar al video: <audio src="/assets/audio/Lionel Messi Goal vs Nashville 🔥.mp3" controls muted autoplay></audio>
+También se puede colocar la fuente (src) en otra línea.
+
+
+COMENTARIOS
+<!-- Para comentar algo lo hacemos así -->
+
+LISTAS
+#No ordenadas:
+
+    <h1>
+        Lista de Súpermercado
+    </h1>
+    <hr>
+    <ul>
+        <li>Azúcar</li>
+        <li>Yerba</li>
+        <li>Agua</li>
+
+<ul> significa unorder list y la etiqueta <li></li> es para colocar cada elemento dentro de la lista. 
+
+#Ordenada
+
+    <h1>
+        Lista de actividades de hoy
+    </h1>
+    <hr>
+    
+    <ol>
+        <li>Dientes</li>
+        <li>Desayunar</li>
+        <li>Compras</li>
+        <li>Almuerzo</li>
+    
+    </ol>
+
+
+#Listas anidadas. Una lista dentro de un elemento de otra lista. Ejemplo:
+
+    <ol>
+        <li>Dientes</li>
+        <li>Desayunar</li>
+        <li>Compras
+            <ul>
+                <li>Azúcar</li>
+                <li>Yerba</li>
+                <li>Agua</li>
+            </ul>
+        </li>
+        <li>Almuerzo</li>
+    
+    </ol>      
+
+-En la lista desordenada enumera los puntos con items, mientras que en la ordenada lo hace con números. 
+-En la lista ordenada se puede indicar que empiece a enumerar desde otro número diferente al 1. Sólo colocando <ol start = "8">. 
+-También puede ordenar con letras. <ol type = "a">. También está la opción de números romanos.
+-Con <ol reversed> invierte los números (del 5 al 1, por ejemplo)  
+
+TABLAS
+
+Las tablas se escriben de la siguiente manera: 
+
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 2px solid rgb(200,200,200);
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+        }
+        td{
+            border: 1px solid rgb(190, 190, 190);
+            padding: 10px 20px;
+        }
+        th {
+            border: 1px solid rgb(190, 190, 190);
+            padding: 10px 20px;
+            background-color: rgb(50, 50, 65);
+        }
+    </style>
+   
+</head>
+
+<h1>Tabla de alumnos</h1>
+
+<body>
+    <hr>
+    <table>
+        <colgroup>
+            <col style="background-color: rgb(33, 46, 46);"> 
+            <col>
+            <col>
+            <col>
+            <col>
+        </colgroup>
+    <tr>
+        <th>&nbsp;</th> <!-- Así se pone un espacio vacío (&nbsp;) -->
+        <th>Pedro</th>
+        <th>Ricardo</th>
+        <th>Anabella</th>
+        <th>Lucía</th>
+
+    </tr>
+
+        <tr>
+        <td>Edad</td>
+        <td>21</td>
+        <td>22</td>
+        <td>25</td>
+        <td>19</td>
+
+    </tr>
+    <tr>
+        <td>Materia</td>
+        <td>HTML</td>
+        <td>CSS</td>
+        <td>React</td>
+        <td>Javascript</td>
+        
+
+    </tr> 
+    
+    <tr>
+        <td>Promedio</td>
+        <td>8</td>
+        <td>9</td>
+        <td>7</td>
+        <td>6</td>
+        
+
+    </tr> 
+    <tr>
+        <td>Aprobado</td>
+        <td>sí</td>
+        <td>sí</td>
+        <td>sí</td>
+        <td>sí</td>
+        
+
+    </tr> 
+    <tr>
+        <td>Años cursados</td>
+        <td>9</td>
+        <td>3</td>
+        <td>4</td>
+        <td>6</td>
+        
+
+    </tr> 
+
+    
+    </table>
+
+En el código hay líneas de CSS para que se vea una tabla con un formato más agradable. 
+La etiqueta que engloba la tabla es <table></table>
+<tr></tr> es para indicar las filas(rows)
+<th></th> va para la primera línea-título (en este caso los nombres de los alumnos)
+<td></td> para las siguientes filas. 
+
+
+AGRUPAMIENTOS
+Existen dos etiquetas para agrupar elementos, como si fueran un bloque. La principal difrencia entre ellas es que una abarca todo el ancho de la página y la otra sólo el espacio que utilizamos.
+Las etiqutas son <div></div> (abarca todo el ancho) y <span></span> (abarca el espacio que utilizamos)
+Ejemplo: 
+ 	<body>
+    <h1>Froma de agrupar:
+
+    </h1>
+    <hr>
+
+    <div>
+        <h2>Título secundario</h2>
+        <p>Este es el contenido de este artículo</p>
+        <img src="/assets/images.jpg" alt="https://www.ole.com.ar" width="300px">
+        <a href="https://www.ole.com.ar" target="_blank"> <br>
+            Cliqui aquí</a>
+        
+         
+    </div>
+
+    <span>
+        <strong>La fecha del día de hoy</strong> <em>13-03-2024</em>
+    </span>
+
+
+</body>
+
+
+IFRAME
+
+Se utiliza para agregar contenido de terceros, que no nos pertenece. 
+Tenemos que copiar el enlace del iframe desde el video de YouTube, audio de SoundCloud o de donde lo saquemos. Para acceder al enlace hay que ir a compartir (embed) 
+En el siguiente código sacamos un video de YouTube y un audio de SoundCloud
+
+   <h2>YouTube</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/S7xTBa93TX8?si=9saqncbUUtICYvpv"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+        
+    <h2>Sound Cloud</h2>
+    <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1019425639&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+    <div
+        style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+        <a href="https://soundcloud.com/es" title="Call me eS" target="_blank"
+            style="color: #cccccc; text-decoration: none;">Call me eS</a> · <a
+            href="https://soundcloud.com/es/sets/voltage-drop-1" title="Voltage Drop" target="_blank"
+            style="color: #cccccc; text-decoration: none;">Voltage Drop</a>
+    </div>  
+
+Nosotros podemos modificar las características de los elementos (width, height, etc)
+También podemos poner directamente un Iframe para tener acceso a otros sitios web dentro del nuestro. Vamos a probar con el buscador de Google:
+<iframe src="https://www.google.com.ar/search?igu=1" frameborder="0" height="300" width="1000"></iframe>
+
+
+FORMULARIOS
+
+Los formularios son útiles para varias funciones. El más típico es para usuarui y contraseña, que se emplea de la siguiente manera:
+
+
+   <form>
+
+    <label for="usuario"> Usuario: </label>
+    <input type="text" id="usuario" name="usuario" placeholder="Nombre de usuario" maxlength="10" minlength="4" pattern="[A-Za-z] {9}">
+    <small>No superar los 9 caracteres</small>    
+    <br>
+
+    <br>
+
+    <label for="password"> Password: </label> 
+    <input type="password" id="password" name="password" placeholder="Escriba aquí su password">
+
+    </form>
+
+Con placeholder nos da la opción de insertar desde cero lo que querramos. En cambio, si en su lugar ponemos value:"Ignacio" la casilla va a comenzar con el nombre por defecto. Aunque luego podemos borrarlo y escribir lo que deseemos. 
+Con pattern indicamos en este caso que se aceptan caracteres de la A a la Z y que serán 9. 
+-El checkbox se pone de la siguiente manera: <input type="checkbox" name="condiciones" id="condiciones"> ¿Está de acuerdo con las condiciones del contrato?
+-Si queremos poner más de una opción para tildar lo hacemos de la siguiente manera: 
+
+    <input type="checkbox" name="lenguajes" value="HTML">HTML
+    <input type="checkbox" name="lenguajes" value="CSS">CSS
+    <input type="checkbox" name="lenguajes" value="JS">JS
+    <input type="checkbox" name="lenguajes" value="REACT">REACT
+    <br> 
+    <input type="radio" name="lenguajes" value="HTML">HTML
+    <input type="radio" name="lenguajes" value="CSS">CSS
+    <input type="radio" name="lenguajes" value="JS">JS
+    <input type="radio" name="lenguajes" value="REACT">REACT
+
+La diferencia entre checkbox y radio es que en el primero se puede tildar más de una opción en simultaneo y en radio sólo se permite escoger una.
+
+-Para números:  <label for="programando"> Años programando: </label> 
+    		<input type="number" id="programando" name="programando" placeholder="Años programando" max"3" min"0" >
+Con max min establecemos un rango.
+
+-Para subir un archivo:  <label for="archivo"> Subí tu CV: </label> 
+    			 <input type="file" id="archivo" name="archivo" value="file" multiple>
+Multiple nos permite seleccionar más de un archivo en simultaneo
+
+-Text area: Se utiliza para abrir un espacio donde el usuario pueda explayarse con textos largos. No es un input y tiene etiqueta de cierre. Ejemplo:
+
+	<label for="opinión"> Escriba su opinión: </label> 
+    <textarea name="opinión" id="opinión" cols="30" rows="10"></textarea>
+
+Con el número de filas y columnas le doy el tamaño al área de redacción. Luego el usuario puede modificarlo. 
+
+-Select: Se utiliza para seleccionar una opción desplazando por medio de una flechita. Se puede colocar una opción por defecto para que aparezca al inicio y también se pueden crear grupos que contengan las opciones. Ejemplo:
+
+    <label for="país"> Seleccione su país de origen: </label> 
+    <select name="país" id="país">
+        <optgroup label="América">
+            <option value="Argentina">Argentina</option>
+            <option value="México">México</option>
+            <option value="Uruguay">Uruguay</option>
+        </optgroup>
+
+        <optgroup label="Europa">
+            <option value="España">España</option>
+            <option value="Alemania" selected="selected">Alemania</option>
+            <option value="Hungría">Hungría</option>
+        </optgroup>
+    </select>
+
+Formé dos grupos, con sus correspondientes etiquetas, y les di tres opciones a cada uno. Además puse que por defecto aparezca Alemania en las opciones, con "selected".
+
+
+-Para enviar un formulario hay que colocar lo siguiente en la primera línea, al lado del form: <form action="envio.php" method="post" target="_blank">
+y abajo del todo colocar: 
+
+		  <input type="submit" value="Enviar tus datos">
+  		  <input type="reset" value="Resetea el formulario">
+
+-Poniendo readonly al final del usuario voy a hacer que no se pueda modificar el que está escrito: <input type="text" id="usuario" name="usuario" value="Sergie Code" readonly>
+-Con disabled es el mismo caso que el anterior pero el nombre de usuario aparece en un rectángulo gris: <input type="text" id="usuario" name="usuario" value="Sergie Code" disabled>
+-Con maxlength y minlength limitamos el rango de caracteres al usuario:<input type="text" id="usuario" name="usuario" placeholder="Nombre de usuario" maxlength="10" minlength="4">
+-Con required indicamos que un campo sea obligatorio. De lo contrario no se envía el formulario: <input type="text" id="usuario" name="usuario" placeholder="Nombre de usuario" required>
+-Para ingresar una fecha en el calendario:     <label for="fecha"> Fecha inicio laboral: </label> 
+  				               <input type="date" id="fecha" name="fecha" max="2023-03-15">  
+
+Con max indicamos la fecha más tardía que se puede colocar.
+
+-Para los e-mail se pone de la siguiente manera: 
+	  <label for="usuario"> Mail: </label> 
+  	  <input type="email" id="usuario" name="usuario" placeholder="Dirección de mail" required>  
+
+-SVG
+Las imágenes svg tienen la particularidad de que están hechas con vectores y nunca se pixelan. Su calidad es excelente.
+Se las puede descargar de sitios específicos y se copia el código de la imagen. 
+
+-Con alt+shift+abajo se copia todo el bloque que seleccionamos
+
+-Para mover un renglón de lugar dejar presionado alt y mover la flecha parra arriba o abajo, según querramos. 
+
+
+
+
+
+
+
+
+
